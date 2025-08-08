@@ -10,8 +10,7 @@ services:
     name: remoteguru_backend
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m gunicorn remoteguru_backend.asgi:application -k uvicorn.workers.UvicornWorker"
-    envVars:
+    startCommand: "gunicorn remoteguru_backend.wsgi:application"
       - key: DATABASE_URL
         fromDatabase:
           name: remoteguru_backend_db
