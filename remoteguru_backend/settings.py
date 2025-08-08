@@ -34,7 +34,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='django-insecure-^#&jwp+5&3zl&f(2+4-dog0)s9u6az**lsf-==r&*n294iyk-j'
+SECRET_KEY =os.environ.get(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -114,7 +114,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://members_39ci_user:E6scwa8PwsO9Kz66j3DmYzxD8SATk4z2@dpg-d1ulqmumcj7s73eld9g0-a.oregon-postgres.render.com/members_39ci',
+    default=os.environ.get(DATABASE_URL),
         conn_max_age=600
     )
 }
