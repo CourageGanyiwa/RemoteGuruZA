@@ -1,8 +1,8 @@
 databases:
-  - name: remoteguru_backend
+  - name: members
     plan: free
-    databaseName: remoteguru_backend
-    user: remoteguru_backend
+    databaseName: members_39ci
+    user: members_39ci_user
 
 services:
   - type: web
